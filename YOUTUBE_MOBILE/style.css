@@ -65,6 +65,7 @@ header .icons .fa-search {
     top: 0;
     text-align: center;
     background-color: var(--black-color);
+    z-index: 1;
 }
 .player video {
     width: 100%;
@@ -99,16 +100,26 @@ body > .info {
 
 .info .metadata .titleAndButton .title {
     font-size: var(--font-medium);
+    margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .title.clamp {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    margin-right: var(--padding);
 }
 
 .info .metadata .titleAndButton .moreBtn {
     height: 100%;
     background-color: #fff;
+    transition: trasform 300ms ease-in-out;
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+    height: 100%;
+    background-color: #fff;
+    transform: rotate(180deg);
 }
 
 .info .metadata .views {
